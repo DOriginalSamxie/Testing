@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: montserrat, arial, verdana;
+  display: block;
+}
+
+.progressBar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  counter-reset: step;
+  margin: 1rem 0 4rem;
+}
+
+.progressBar::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  height: 4px;
+  width: 100%;
+  transform: translateY(-50%);
+  background: #dcdcdc;
+  z-index: -1;
+}
+.progressStep {
+  width: 35px;
+  height: 35px;
+  background: #dcdcdc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progressStep::before {
+  counter-increment: step;
+  content: counter(step);
+}
+
+.progressStep::after {
+  content: attr(dataTitle);
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #666;
+}
+.progressStepActive {
+  background: rgb(0, 55, 128);
+  color: #dcdcdc;
+}
+
+form {
+  display: block;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+form section {
+  background: white;
+  border: 0 none;
+  border-radius: 5px;
+  box-sizing: content-box;
+  margin-top: 10px;
+  position: relative;
+  box-shadow: 0 0 4px 0px rgb(24 78 149 / 28%);
+  padding: 2%;
+}
+
+.formHeading {
+  display: flex;
+}
+
+.formHeading .companyLogo > img {
+  border: 1px solid #f8f8f8;
+  width: 98%;
+  max-width: 120px;
+  height: unset;
+  padding: 5%;
+  box-shadow: 0px 0px 5px 0px rgb(83 63 105 / 11%);
+}
+
+.formTitle {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+  color: rgb(24, 78, 149);
+}
+
+.formSubtitle {
+  font-weight: 500;
+  font-size: 16px !important;
+  font-family: sans-serif;
+  color: #666;
+  margin-bottom: 25px;
+  padding-left: 1rem;
+}
+
+.form-label {
+  margin-bottom: -0.5rem;
+  text-align: center;
+  margin-right: 20px;
+}
+.form-select {
+  margin-bottom: -0.5rem;
+  text-align: center;
+  margin-right: 20px;
+}
+label {
+  font-size: 14px;
+  color: rgb(0, 55, 128);
+  cursor: default;
+}
+
+.form-control {
+  border-radius: 0;
+  margin: 10px;
+  padding: 8px;
+  height: calc(2em + 2px);
+  border: 1px solid #ccc;
+  box-shadow: none !important;
+  width: 80%;
+  font-size: calc(0.6vw + 0.5em);
+  line-height: 1.5;
+  color: #272727;
+  background-color: #fff;
+  background-clip: padding-box;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-select {
+  border-radius: 0;
+  margin: 10px;
+  padding: px;
+  height: calc(2em + 2px);
+  border: 1px solid #ccc;
+  box-shadow: none !important;
+  width: 80%;
+  font-size: calc(0.6vw + 0.5em);
+  line-height: 1.5;
+  color: #272727;
+  background-color: #fff;
+  background-clip: padding-box;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.cover {
+  width: 100%;
+  margin-left: auto;
+}
+
+.activeButton {
+  width: 100px;
+  background: rgba(9, 56, 107, 0.918);
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 1px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 20px 5px;
+  margin-top: 30px;
+}
